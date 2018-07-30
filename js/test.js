@@ -207,7 +207,7 @@ function toCart(){
        if(finalIt.has(element))
        {let a=document.getElementById(element.name).value;
         console.log(element.quant);
-        element.quant+=document.getElementById(element.name).value;
+        element.quant=element.quant - -document.getElementById(element.name).value;
        }
        else
        {
