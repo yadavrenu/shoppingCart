@@ -111,7 +111,7 @@ var veg=[
         "quant":0
     },
     {
-        "name":"Bitter Gourd",
+        "name":"Bitter-Gourd",
         "clas":"Vegetable",
         "price":50,
         "quant":0
@@ -150,7 +150,7 @@ var biscuit=[
         "quant":0
     },
     {
-        "name":"Dark Fantasy",
+        "name":"Dark-Fantasy",
         "clas":"Biscuit",
         "price":30,
         "quant":0
@@ -172,10 +172,10 @@ var all=[fruits,veg,biscuit];
 var cartIt=[];
 var finalIt=new Set();
 function mySearch(){   
-   var j;
+   var j=0;
    var input=document.getElementById("myInput").value;
    let re = new RegExp(input,"i");
-   var text;
+   var text="";
    if(input=="")
      document.getElementById("display").innerHTML="";
    else{
@@ -204,16 +204,20 @@ function myReset(){
 
 function toCart(){
    cartIt.forEach((element)=>{
+       var quantity=document.getElementById(element.name).value;
+       if(quantity>0)
+       {
        if(finalIt.has(element))
-       {let a=document.getElementById(element.name).value;
+       {
         console.log(element.quant);
         element.quant=element.quant - -document.getElementById(element.name).value;
        }
        else
        {
+        element.quant=element.quant - -document.getElementById(element.name).value;
         finalIt.add(element);
-        element.quant=document.getElementById(element.name).value;
        }
+    }
        
    });
 //    console.log(finalIt);
