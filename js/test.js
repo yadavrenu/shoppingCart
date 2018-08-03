@@ -207,17 +207,17 @@ function toCart(){
        var quantity=document.getElementById(element.name).value;
        if(quantity>0)
        {
-       if(finalIt.has(element))
-       {
-        console.log(element.quant);
-        element.quant=element.quant - -document.getElementById(element.name).value;
-       }
-       else
-       {
+    //    if(finalIt.has(element))
+    //    {
+    //     console.log(element.quant);
+    //     element.quant=element.quant - -document.getElementById(element.name).value;
+    //    }
+    //    else
+    //    {
         element.quant=element.quant - -document.getElementById(element.name).value;
         finalIt.add(element);
+    //    }
        }
-    }
        
    });
 //    console.log(finalIt);
@@ -225,7 +225,6 @@ function toCart(){
    text2+="<table><tr><th>Name &emsp;&emsp;</th><th>Quantity</th></tr>";
         finalIt.forEach((element)=>{
             if(element.quant>0){
-                // console.log(quant);
                text2+="<tr><td>"+element.name+"</td><td>"+element.quant+"</td></tr>";
             }
         });
